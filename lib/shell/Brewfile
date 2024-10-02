@@ -1,5 +1,5 @@
-brew "bash"
-brew "starship"
-brew "vim"
-brew "tmux"
-brew "tpm"
+brew "bash", restart_service: :changed
+brew "starship", restart_service: :changed
+brew "vim", restart_service: :changed
+brew "tmux", restart_service: :changed
+brew "tpm", restart_service: :changed

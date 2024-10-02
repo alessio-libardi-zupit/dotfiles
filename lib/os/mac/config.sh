@@ -2,5 +2,4 @@
 
 echo "Configuring MacOS..."
 
-echo "Configuring applications..."
-brew bundle --file=./lib/os/mac/Brewfile
+bash ./lib/os/mac/dock.sh

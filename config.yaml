@@ -1,28 +1,33 @@
 - clean: ["~"]
 
 - defaults:
-    link:
-      create: true
-      force: true
-      relink: true
+      link:
+          create: true
+          force: true
+          relink: true
 
 - link:
-    ~/.bash_profile: ./lib/shell/config/.bash_profile
-    ~/.bashrc: ./lib/shell/config/.bashrc
-    ~/.config/starship.toml: ./lib/shell/config/starship.toml
-    ~/.vim/autoload/plug.vim: ./packages/vim-plug/plug.vim
-    ~/.vimrc: ./lib/shell/config/.vimrc
-    ~/.tmux.conf: ./lib/shell/config/.tmux.conf
-    ~/.gitconfig: ./lib/shell/config/.gitconfig
+      ~/.bash_profile: ./lib/shell/config/.bash_profile
+      ~/.bashrc: ./lib/shell/config/.bashrc
+      ~/.config/starship.toml: ./lib/shell/config/starship.toml
+      ~/.vim/autoload/plug.vim: ./packages/vim-plug/plug.vim
+      ~/.vimrc: ./lib/shell/config/.vimrc
+      ~/.tmux.conf: ./lib/shell/config/.tmux.conf
+      ~/.gitconfig: ./lib/shell/config/.gitconfig
 
 - shell:
-    - description: Configure OS
-      command: bash lib/os/config.sh
-      stdin: true
-      stdout: true
-      stderr: true
-    - description: Configure shell
-      command: bash lib/shell/config.sh
-      stdin: true
-      stdout: true
-      stderr: true
+      - description: Configure package Manager
+        command: bash --login lib/core/config.sh
+        stdin: true
+        stdout: true
+        stderr: true
+      - description: Configure OS
+        command: bash --login lib/os/config.sh
+        stdin: true
+        stdout: true
+        stderr: true
+      - description: Configure shell
+        command: bash --login lib/shell/config.sh
+        stdin: true
+        stdout: true
+        stderr: true

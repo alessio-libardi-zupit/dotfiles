@@ -20,5 +20,3 @@ else
   echo "Not on macOS. Exiting..."
   exit 0
 fi
-
-

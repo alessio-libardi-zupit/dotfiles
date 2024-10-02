@@ -1,24 +1,19 @@
 #!/usr/bin/env bash
 
-source ~/.bashrc
-
-echo "Configuring shell..."
-
 echo "Configuring libraries..."
 brew bundle --file=./lib/shell/Brewfile
 
-# Define the shell path
-# SHELL_PATH="/opt/homebrew/bin/bash"
+if ! grep -qxF 'eval "$(starship init bash)"' ~/.bashrc; then
+  echo 'eval "$(starship init bash)"' >>~/.bashrc
+fi
 
-# grep -qxF "$SHELL_PATH" /etc/shells || echo "$SHELL_PATH" | sudo tee -a /etc/shells
+if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
+  echo "Changing default shell to $SHELL_PATH"
 
-# echo "Changing default shell to $SHELL_PATH"
-# if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
-#   sudo chsh -s "$SHELL_PATH"
-#   exec "$SHELL_PATH"
-# fi
-
-echo 'eval "$(starship init bash)"' >>~/.bashrc
-
+  SHELL_PATH="/opt/homebrew/bin/bash"
+  grep -qxF "$SHELL_PATH" /etc/shells || echo "$SHELL_PATH" | sudo tee -a /etc/shells
+  sudo chsh -s "$SHELL_PATH"
+  exec "$SHELL_PATH"
+fi
 
 echo "Shell configured!"
