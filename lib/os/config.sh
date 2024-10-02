@@ -14,8 +14,8 @@ case $(uname -s) in
 Darwin)
   if ! command -v brew &>/dev/null; then
     MACOS_PACKAGE_MANAGER_PATH="/opt/homebrew/bin/brew"
-    echo "eval \"\$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)\"" >> ~/.bashrc
-    eval "$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)"
+    echo "eval \"sudo -Hu alessiolibardi \$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)\"" >> ~/.bashrc
+    eval "sudo -Hu alessiolibardi $(${MACOS_PACKAGE_MANAGER_PATH} shellenv)"
     source ~/.bashrc
   fi
   bash ./lib/os/mac/config.sh
