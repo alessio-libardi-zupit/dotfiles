@@ -2,7 +2,7 @@
 
 set -e
 
-GITHUB_USER="alessio-libardi"
+GITHUB_USER="alessio-libardi-zupit"
 GITHUB_REPO="dotfiles"
 
 BASEDIR="${HOME}/.config/${GITHUB_REPO}"
