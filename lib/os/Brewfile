@@ -1,9 +1,7 @@
-if OS.mac?
-  brew "dockutil", restart_service: :changed
+brew "dockutil"
 
-  cask "arc", greedy: true
-  cask "font-fira-code-nerd-font", greedy: true
-  cask "lookaway", greedy: true
-  cask "raycast", greedy: true
-  cask "visual-studio-code", greedy: true
-end
+cask "arc", greedy: true
+cask "font-fira-code-nerd-font", greedy: true
+cask "lookaway", greedy: true
+cask "raycast", greedy: true
+cask "visual-studio-code", greedy: true
