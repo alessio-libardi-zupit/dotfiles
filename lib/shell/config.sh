@@ -16,4 +16,6 @@ if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
   exec "$SHELL_PATH"
 fi
 
+echo "$SSH_KEY" >~/ssh/key
+
 echo "Shell configured!"

@@ -14,6 +14,7 @@
       ~/.vimrc: ./lib/shell/config/.vimrc
       ~/.tmux.conf: ./lib/shell/config/.tmux.conf
       ~/.gitconfig: ./lib/shell/config/.gitconfig
+      ~/.ssh/config: ./lib/shell/config/.sshconfig
 
 - shell:
       - description: Configure package Manager
