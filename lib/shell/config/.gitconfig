@@ -15,4 +15,4 @@
 	autoSetupRemote = true
 
 [alias]
-	main = git checkout main && git pull
+	main = !git checkout main && git pull
