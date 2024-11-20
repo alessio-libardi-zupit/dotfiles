@@ -1,9 +1,9 @@
-Host github
+Host github.com
         HostName github.com
         User git
         IdentityFile ~/.ssh/key
         IdentitiesOnly yes
-Host gitlab
+Host gitlab.com
         Hostname gitlab.com
         User git
         IdentityFile ~/.ssh/key
