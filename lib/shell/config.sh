@@ -17,5 +17,6 @@ if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
 fi
 
 echo "$SSH_KEY" >~/.ssh/key
+chmod 400 ~/.ssh/key
 
 echo "Shell configured!"
