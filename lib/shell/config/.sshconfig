@@ -1,8 +1,19 @@
+
+Host *
+        AddKeysToAgent yes
+        UseKeychain yes
+
+Host zupit-vm-applications
+        Hostname 116.203.154.253
+        Port 22
+        User alessio.libardi
+
 Host github.com
         HostName github.com
         User git
         IdentityFile ~/.ssh/key
         IdentitiesOnly yes
+
 Host gitlab.com
         Hostname gitlab.com
         User git
