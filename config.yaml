@@ -15,6 +15,7 @@
       ~/.tmux.conf: ./lib/shell/config/.tmux.conf
       ~/.gitconfig: ./lib/shell/config/.gitconfig
       ~/.ssh/config: ./lib/shell/config/.sshconfig
+      ~/.vpn/office.conf: ./lib/shell/config/vpn.office.conf
 
 - shell:
       - description: Configure package Manager
