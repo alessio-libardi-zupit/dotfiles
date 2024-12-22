@@ -16,8 +16,8 @@ autocmd VimEnter *
 
 " Set the colorscheme
 set termguicolors
-colorscheme catppuccin_latte
 let g:lightline = {'colorscheme': 'catppuccin_latte'}
+colorscheme catppuccin_latte
 
 
 " Set the statusline
