@@ -20,6 +20,7 @@ Darwin)
 Linux)
   LINUX_PACKAGE_MANAGER_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
   sed -i '/^eval "\$('"$LINUX_PACKAGE_MANAGER_PATH"' shellenv)"$/b; $a eval "$('"$LINUX_PACKAGE_MANAGER_PATH"' shellenv)"' ~/.bash_exports
+  eval "$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)"
   ;;
 *) ;;
 esac
