@@ -11,6 +11,7 @@
     ~/.bash_exports: ./lib/shell/config/.bash_exports
     ~/.bash_functions: ./lib/shell/config/.bash_functions
     ~/.bash_profile: ./lib/shell/config/.bash_profile
+    ~/.bash_prompt: ./lib/shell/config/.bash_prompt
     ~/.bashrc: ./lib/shell/config/.bashrc
     ~/.config/starship.toml: ./lib/shell/config/starship.toml
     ~/.vim/autoload/plug.vim: ./packages/vim-plug/plug.vim
