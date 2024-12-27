@@ -20,7 +20,7 @@ Linux)
   if ! command -v brew &>/dev/null; then
     LINUX_PACKAGE_MANAGER_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
 
-    sed -i '/^eval "\$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)"$/b; $a eval "\$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)"' ~/.bash_exports
+    sed -i '' "/^eval \"\\\$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)\"$/b; \$a eval \"\\\$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)\"" ~/.bash_exports
   fi
   ;;
 *) ;;
