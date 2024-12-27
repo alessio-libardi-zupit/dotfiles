@@ -1,5 +1,6 @@
 brew "bash"
+brew "bat"
 brew "starship"
-brew "vim"
 brew "tmux"
 brew "tpm"
+brew "vim"
