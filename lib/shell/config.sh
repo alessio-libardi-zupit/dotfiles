@@ -14,8 +14,6 @@ if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
   exec "$SHELL_PATH"
 fi
 
-sed -i '/^export PATH="$HOME\/bin:$PATH"$/b; $a export PATH="$HOME/bin:$PATH"' ~/.bashrc
-
 echo "$SSH_KEY" >~/.ssh/key
 chmod 400 ~/.ssh/key
 

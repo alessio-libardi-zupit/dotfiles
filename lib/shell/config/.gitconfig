@@ -15,6 +15,6 @@
 	autoSetupRemote = true
 
 [alias]
-	main = !git checkout main && git pull
-  open = !git-open
+	main = !git-main
+  draft = !git-draft
 

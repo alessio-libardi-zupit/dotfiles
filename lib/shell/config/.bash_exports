@@ -1,0 +1,8 @@
+export ROOT=/
+export HOME=$HOME
+export WORKSPACE=$CODESPACE_VSCODE_FOLDER
+
+export DOTFILES=$HOME/.config/dotfiles
+
+export EDITOR=vim
+export IDE=code

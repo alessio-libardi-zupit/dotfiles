@@ -1,5 +1,5 @@
-# Source .bashrc if available
+# shellcheck source=lib/shell/config/.bashrc
+
 if [ -f ~/.bashrc ]; then
-  # shellcheck source=lib/shell/config/.bashrc
   source ~/.bashrc
 fi

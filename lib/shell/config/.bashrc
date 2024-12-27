@@ -1,12 +1,9 @@
-alias update='bash ~/.config/dotfiles/bin/update.sh'
+# shellcheck source=lib/shell/config/.bash_aliases
+# shellcheck source=lib/shell/config/.bash_exports
+# shellcheck source=lib/shell/config/.bash_functions
+# shellcheck source=lib/shell/config/.bash_prompt
 
-alias root='cd /'
-alias home='cd ~'
-alias project='cd $CODESPACE_VSCODE_FOLDER'
-
-alias editor='vim'
-alias ide='code'
-
-alias cat='bat'
-
-alias vpn_office='sudo openfortivpn -c ~/.vpn/office.conf'
+for FILE in ~/.bash_{aliases,exports,functions,prompt}; do
+  [ -r "$FILE" ] && [ -f "$FILE" ] && source "$FILE"
+done
+unset FILE
