@@ -1,5 +1,6 @@
 brew "bash"
 brew "bat"
+brew "gh"
 brew "starship"
 brew "tmux"
 brew "tpm"
