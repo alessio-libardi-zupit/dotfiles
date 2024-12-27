@@ -3,7 +3,7 @@
 echo "Configuring libraries..."
 brew bundle --file=./lib/shell/Brewfile
 
-sed -i "s/eval \"\$(starship init bash)\"//g" ~/.bashrc
+sed -i '/^eval "$(starship init bash)"$/b; $a eval "$(starship init bash)"' ~/.bashrc
 
 if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
   echo "Changing default shell to $SHELL_PATH"
