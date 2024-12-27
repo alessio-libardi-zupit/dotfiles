@@ -16,6 +16,11 @@ if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
   exec "$SHELL_PATH"
 fi
 
+# Add user scripts to PATH if it's not already there
+if ! grep -qxF 'export PATH="$HOME/bin:$PATH"' ~/.bashrc; then
+  echo 'export PATH="$HOME/bin:$PATH"' >>~/.bashrc
+fi
+
 echo "$SSH_KEY" >~/.ssh/key
 chmod 400 ~/.ssh/key
 
