@@ -3,9 +3,7 @@
 echo "Configuring libraries..."
 brew bundle --file=./lib/shell/Brewfile
 
-if ! grep -qxF 'eval "$(starship init bash)"' ~/.bashrc; then
-  echo 'eval "$(starship init bash)"' >>~/.bashrc
-fi
+sed -i "s/eval \"\$(starship init bash)\"//g" ~/.bashrc
 
 if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
   echo "Changing default shell to $SHELL_PATH"
@@ -16,10 +14,7 @@ if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
   exec "$SHELL_PATH"
 fi
 
-# Add user scripts to PATH if it's not already there
-if ! grep -qxF 'export PATH="$HOME/bin:$PATH"' ~/.bashrc; then
-  echo 'export PATH="$HOME/bin:$PATH"' >>~/.bashrc
-fi
+sed -i "s/export PATH=$HOME/bin:$PATH//g" ~/.bashrc
 
 echo "$SSH_KEY" >~/.ssh/key
 chmod 400 ~/.ssh/key
