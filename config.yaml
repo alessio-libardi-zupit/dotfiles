@@ -17,6 +17,9 @@
       ~/.ssh/config: ./lib/shell/config/.sshconfig
       ~/.vpn/office.conf: ./lib/shell/config/vpn.office.conf
 
+- link:
+      ~/bin: ./lib/shell/scripts
+
 - shell:
       - description: Configure package Manager
         command: bash --login lib/core/config.sh

@@ -16,18 +16,5 @@
 
 [alias]
 	main = !git checkout main && git pull
-  open = "!f() { \
-    if [ $# -ne 2 ]; then \
-      echo 'Usage: git open <branch-name> <commit-message>'; \
-      return 1; \
-    fi; \
-    branch=\"$1\"; \
-    msg=\"$2\"; \
-    git checkout main && \
-    git pull origin main && \
-    git checkout -b \"$branch\" && \
-    git commit --allow-empty -m \"$msg\" && \
-    git push -u origin \"$branch\" && \
-    gh pr create --web -t \"$msg\" -b ''; \
-  }"
+  open = !git-open
 
