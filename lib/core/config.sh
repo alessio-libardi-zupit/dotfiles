@@ -8,7 +8,6 @@ fi
 echo "Detecting OS..."
 case $(uname -s) in
 Darwin)
-
   if ! command -v brew &>/dev/null; then
     MACOS_PACKAGE_MANAGER_PATH="/opt/homebrew/bin/brew"
     echo "eval \"\$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)\"" >>~/.bashrc
@@ -18,9 +17,11 @@ Darwin)
   fi
   ;;
 Linux)
-  LINUX_PACKAGE_MANAGER_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
-  sed -i '/^eval "\$('"$LINUX_PACKAGE_MANAGER_PATH"' shellenv)"$/b; $a eval "$('"$LINUX_PACKAGE_MANAGER_PATH"' shellenv)"' ~/.bash_exports
-  eval "$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)"
+  if ! command -v brew &>/dev/null; then
+    LINUX_PACKAGE_MANAGER_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
+
+    sed -i '/^eval "\$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)"$/b; $a eval "\$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)"' ~/.bash_exports
+  fi
   ;;
 *) ;;
 esac
