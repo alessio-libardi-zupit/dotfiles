@@ -28,3 +28,13 @@ git_draft() {
     --assignee "@me" \
     --web
 }
+
+vpn_easy() {
+  local config="$1"
+  if [ -z "$config" ]; then
+    echo "Usage: vpn <office|apss>"
+    return 1
+  fi
+
+  sudo env "PATH=$PATH" openfortivpn -c "$HOME/.vpn/${config}.conf"
+}

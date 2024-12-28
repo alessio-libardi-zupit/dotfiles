@@ -20,7 +20,8 @@
       ~/.config/starship.toml: ./lib/shell/prompt/starship.toml
       ~/.ssh/config: ./lib/shell/ssh/config
       ~/.ssh/known_hosts: ./lib/shell/ssh/known_hosts
-      ~/.vpn/office.conf: ./lib/shell/vpn/vpn.office.conf
+      ~/.vpn/apss.conf: ./lib/shell/vpn/apss.conf
+      ~/.vpn/office.conf: ./lib/shell/vpn/office.conf
 
 - shell:
       - description: Configure package manager

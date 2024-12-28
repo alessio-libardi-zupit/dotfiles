@@ -9,4 +9,4 @@ alias ide='$IDE'
 
 alias cat='bat'
 
-alias vpn_office='sudo openfortivpn -c ~/.vpn/office.conf'
+alias vpn='vpn_easy'
