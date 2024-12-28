@@ -6,10 +6,10 @@
 	defaultBranch = main
 
 [core]
-	editor = !bash -c 'source $HOME/.bash_aliases && ide --wait'
+	editor = code --wait
 
 [diff]
-	tool = !bash -c 'source $HOME/.bash_aliases && ide --wait --diff $LOCAL $REMOTE'
+	tool = code --wait --diff $LOCAL $REMOTE
 
 [push]
 	autoSetupRemote = true
