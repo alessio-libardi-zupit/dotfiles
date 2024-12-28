@@ -16,5 +16,5 @@
 
 [alias]
   main = !bash -c 'source $HOME/.bash_functions && git_main'
-  draft = !bash -c 'source "$HOME/.bash_functions" && git_draft "$@"' -
+  draft = "!bash -c 'source \"$HOME/.bash_functions\" && git_draft \"$@\"' -"
 
