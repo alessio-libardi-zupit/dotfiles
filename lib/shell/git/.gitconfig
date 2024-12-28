@@ -15,6 +15,6 @@
 	autoSetupRemote = true
 
 [alias]
-  main = !git-main
-  draft = !git-draft
+  main = !bash -c 'source $HOME/.bash_functions && git_main'
+  draft = !bash -c 'source "$HOME/.bash_functions" && git_draft "$@"' -
 
