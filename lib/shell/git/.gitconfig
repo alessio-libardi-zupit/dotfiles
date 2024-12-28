@@ -6,10 +6,10 @@
 	defaultBranch = main
 
 [core]
-	editor = code --wait
+	editor = ide --wait
 
 [diff]
-	tool = code --wait --diff $LOCAL $REMOTE
+	tool = ide --wait --diff $LOCAL $REMOTE
 
 [push]
 	autoSetupRemote = true

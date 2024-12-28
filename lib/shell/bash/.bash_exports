@@ -6,3 +6,4 @@ export DOTFILES=$HOME/.config/dotfiles
 
 export EDITOR=vim
 export IDE=code
+export VISUAL=code
