@@ -27,5 +27,6 @@ git_draft() {
     --title "$COMMIT_MESSAGE" \
     --assignee "@me" \
     --body '' \
-    --draft
+    --draft \
+    --web
 }

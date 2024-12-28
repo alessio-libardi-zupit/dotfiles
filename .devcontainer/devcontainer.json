@@ -10,7 +10,8 @@
         "EditorConfig.EditorConfig",
         "GitHub.copilot",
         "redhat.vscode-yaml",
-        "mads-hartmann.bash-ide-vscode"
+        "mads-hartmann.bash-ide-vscode",
+        "tamasfe.even-better-toml"
       ]
     }
   },
