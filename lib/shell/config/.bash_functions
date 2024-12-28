@@ -24,9 +24,7 @@ git_draft() {
   git push -u origin "$BRANCH"
 
   gh pr create \
-    --title "$COMMIT_MESSAGE" \
+    --fill \
     --assignee "@me" \
-    --body '' \
-    --draft \
     --web
 }
