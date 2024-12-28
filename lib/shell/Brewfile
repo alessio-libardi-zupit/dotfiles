@@ -1,6 +1,7 @@
 brew "bash"
 brew "bat"
 brew "gh"
+brew "openfortivpn"
 brew "starship"
 brew "tmux"
 brew "tpm"
