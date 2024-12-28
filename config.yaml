@@ -18,7 +18,8 @@
       ~/.tmux.conf: ./lib/shell/prompt/.tmux.conf
       ~/.vimrc: ./lib/shell/prompt/.vimrc
       ~/.config/starship.toml: ./lib/shell/prompt/starship.toml
-      ~/.ssh/config: ./lib/shell/ssh/.sshconfig
+      ~/.ssh/config: ./lib/shell/ssh/config
+      ~/.ssh/known_hosts: ./lib/shell/ssh/known_hosts
       ~/.vpn/office.conf: ./lib/shell/vpn/vpn.office.conf
 
 - shell:
