@@ -12,7 +12,10 @@ if [ "$(ps -p $$ -o 'comm=')" != "bash" ]; then
   exec "$SHELL_PATH"
 fi
 
-echo "$SSH_KEY" >~/.ssh/key
-chmod 400 ~/.ssh/key
+if [ -n "$SSH_KEY" ]; then
+  echo "Writing SSH key..."
+  echo "$SSH_KEY" >~/.ssh/key
+  chmod 600 ~/.ssh/key
+fi
 
 echo "Shell configured!"
