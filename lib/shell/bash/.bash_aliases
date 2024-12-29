@@ -10,3 +10,5 @@ alias ide='$IDE'
 alias cat='bat'
 
 alias vpn='vpn_easy'
+
+alias ssh-add-key='eval $(ssh-agent -s) && ssh-add ~/.ssh/key'
