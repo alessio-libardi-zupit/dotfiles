@@ -1,49 +1,45 @@
 - clean: ["~"]
 
 - defaults:
-      link:
-          create: true
-          force: true
-          relink: true
+        link:
+              create: true
+              force: true
+              relink: true
 
 - link:
-      ~/.bash_aliases: ./lib/shell/bash/.bash_aliases
-      ~/.bash_env: ./lib/shell/bash/.bash_env
-      ~/.bash_functions: ./lib/shell/bash/.bash_functions
-      ~/.bash_profile: ./lib/shell/bash/.bash_profile
-      ~/.bash_extra: ./lib/shell/bash/.bash_extra
-      ~/.bashrc: ./lib/shell/bash/.bashrc
-      ~/.gitconfig: ./lib/shell/git/.gitconfig
-      ~/.vim/autoload/plug.vim: ./packages/vim-plug/plug.vim
-      ~/.tmux.conf: ./lib/shell/prompt/.tmux.conf
-      ~/.vimrc: ./lib/shell/prompt/.vimrc
-      ~/.config/starship.toml: ./lib/shell/prompt/starship.toml
+        ~/.bash_aliases: ./lib/shell/bash/.bash_aliases
+        ~/.bash_env: ./lib/shell/bash/.bash_env
+        ~/.bash_functions: ./lib/shell/bash/.bash_functions
+        ~/.bash_profile: ./lib/shell/bash/.bash_profile
+        ~/.bash_extra: ./lib/shell/bash/.bash_extra
+        ~/.bashrc: ./lib/shell/bash/.bashrc
+        ~/.gitconfig: ./lib/shell/git/.gitconfig
+        ~/.vim/autoload/plug.vim: ./packages/vim-plug/plug.vim
+        ~/.tmux.conf: ./lib/shell/prompt/.tmux.conf
+        ~/.vimrc: ./lib/shell/prompt/.vimrc
+        ~/.config/starship.toml: ./lib/shell/prompt/starship.toml
 
 - link:
-      description: Link SSH configuration files
-      files:
-          ~/.ssh/config: ./lib/shell/ssh/config
-          ~/.ssh/known_hosts: ./lib/shell/ssh/known_hosts
+        ~/.ssh/config: ./lib/shell/ssh/config
+        ~/.ssh/known_hosts: ./lib/shell/ssh/known_hosts
 
 - link:
-      description: Link VPN configuration files
-      files:
-          ~/.vpn/apss.conf: ./lib/shell/vpn/apss.conf
-          ~/.vpn/office.conf: ./lib/shell/vpn/office.conf
+        ~/.vpn/apss.conf: ./lib/shell/vpn/apss.conf
+        ~/.vpn/office.conf: ./lib/shell/vpn/office.conf
 
 - shell:
-      - description: Configure package manager
-        command: bash --login lib/core/config.sh
-        stdin: true
-        stdout: true
-        stderr: true
-      - description: Configure OS
-        command: bash --login lib/os/config.sh
-        stdin: true
-        stdout: true
-        stderr: true
-      - description: Configure shell
-        command: bash --login lib/shell/config.sh
-        stdin: true
-        stdout: true
-        stderr: true
+        - description: Configure package manager
+          command: bash --login lib/core/config.sh
+          stdin: true
+          stdout: true
+          stderr: true
+        - description: Configure OS
+          command: bash --login lib/os/config.sh
+          stdin: true
+          stdout: true
+          stderr: true
+        - description: Configure shell
+          command: bash --login lib/shell/config.sh
+          stdin: true
+          stdout: true
+          stderr: true
