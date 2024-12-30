@@ -4,24 +4,3 @@ if ! command -v brew &>/dev/null; then
   echo "Installing package manager..."
   NONINTERACTIVE=1 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
-
-echo "Detecting OS..."
-case $(uname -s) in
-Darwin)
-  if ! command -v brew &>/dev/null; then
-    MACOS_PACKAGE_MANAGER_PATH="/opt/homebrew/bin/brew"
-    echo "eval \"\$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)\"" >>~/.bashrc
-    echo "unalias brew 2>/dev/null" >>~/.bashrc
-    echo "brewser=\$(stat -f \"%Su\" \$(which brew))" >>~/.bashrc
-    echo "alias brew='sudo -Hu \$brewser brew'" >>~/.bashrc
-  fi
-  ;;
-Linux)
-  if ! command -v brew &>/dev/null; then
-    LINUX_PACKAGE_MANAGER_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
-
-    echo -e "\neval \"\$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)\"" >>~/.bash_exports
-  fi
-  ;;
-*) ;;
-esac
