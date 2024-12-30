@@ -20,7 +20,7 @@ Linux)
 esac
 
 if [ -f ~/.ssh/key ]; then
-  eval "$(keychain --eval --agents ssh key)"
+  eval "$(keychain --eval --agents --quiet ssh key)"
 fi
 
 eval "$(starship init bash)"
