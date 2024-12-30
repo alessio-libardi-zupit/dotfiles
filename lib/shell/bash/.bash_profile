@@ -1,4 +1,4 @@
-eval "$(keychain --eval --agents ssh id_rsa)"
+eval "$(keychain --eval --agents ssh key)"
 
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc
