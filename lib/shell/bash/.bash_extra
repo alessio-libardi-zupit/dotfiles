@@ -20,7 +20,7 @@ Linux)
 esac
 
 if command -v keychain &>/dev/null && [ -f ~/.ssh/key ]; then
-  eval "$(keychain --eval --agents --quiet ssh key)"
+  eval "$(keychain --quiet --eval --agents ssh key)"
 fi
 
 if command -v starship &>/dev/null; then
