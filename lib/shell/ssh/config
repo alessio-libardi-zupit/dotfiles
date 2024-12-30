@@ -1,3 +1,5 @@
+UserKnownHostsFile ~/.ssh/known_hosts
+
 Host *
         AddKeysToAgent yes
         IgnoreUnknown UseKeychain
