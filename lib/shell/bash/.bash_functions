@@ -36,5 +36,23 @@ vpn_easy() {
     return 1
   fi
 
-  sudo env "PATH=$PATH" openfortivpn -c "$HOME/.vpn/${config}.conf"
+  if [ ! -f "$HOME/.vpn/${config}.conf" ]; then
+    echo "VPN configuration file not found: $HOME/.vpn/${config}.conf"
+    return 1
+  fi
+
+  # install ppp if not found
+  if ! command -v pppd &>/dev/null; then
+    echo "Installing ppp..."
+    sudo apt-get install -y ppp
+  fi
+
+  if [ "$config" = "office" ]; then
+    sudo env "PATH=$PATH" openfortivpn -c "$HOME/.vpn/${config}.conf" -u "$VPN_OFFICE_USERNAME" -p "$VPN_OFFICE_PASSWORD"
+  elif [ "$config" = "apss" ]; then
+    sudo env "PATH=$PATH" openfortivpn -c "$HOME/.vpn/${config}.conf" -u "$VPN_APSS_USERNAME" -p "$VPN_APSS_PASSWORD"
+  else
+    echo "Unknown VPN configuration: $config"
+    return 1
+  fi
 }
