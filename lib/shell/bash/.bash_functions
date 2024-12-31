@@ -42,7 +42,9 @@ vpn_easy() {
   fi
 
   if ! command -v pppd &>/dev/null; then
+    sudo apt-get update > /dev/null
     sudo apt-get install -y ppp > /dev/null
+    sudo apt-get install -y pppd > /dev/null
   fi
 
   CONF=$(mktemp)
