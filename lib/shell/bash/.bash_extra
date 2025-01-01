@@ -5,12 +5,11 @@ Darwin)
 
     if ! command -v brew &>/dev/null && [ -f "${MACOS_PACKAGE_MANAGER_PATH}" ]; then
       eval "$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)"
+
+      unalias brew 2>/dev/null
+      brewser="$(stat -f \"%Su\" "$(which brew)")"
+      alias brew='sudo -Hu \$brewser brew'
     fi
-
-    unalias brew 2>/dev/nul
-    brewser="$(stat -f \"%Su\" "$(which brew)")"
-    alias brew='sudo -Hu \$brewser brew'
-
   fi
   ;;
 Linux)
