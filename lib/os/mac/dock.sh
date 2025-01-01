@@ -5,12 +5,15 @@ if [ "$(uname)" == "Darwin" ]; then
 
   if [ ! -f /usr/local/bin/dockutil ]; then
     dockutil --no-restart --remove all
+    dockutil --no-restart --add "/Applications/Launchpad.app"
+
+    dockutil --add '' --type small-spacer --section apps --before Arc
 
     dockutil --no-restart --add "/Applications/Arc.app"
-    dockutil --no-restart --add "/Applications/Terminal.app"
+    dockutil --no-restart --add "/Applications/Utilities/Terminal.app"
     dockutil --no-restart --add "/Applications/Visual Studio Code.app"
 
-    dockutil --add '' --type spacer --section apps --before Arc
+    dockutil --add '' --type small-spacer --section apps --after "Visual Studio Code"
 
     killall Dock
 
