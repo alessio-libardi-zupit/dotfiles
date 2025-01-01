@@ -2,10 +2,15 @@ case $(uname -s) in
 Darwin)
   if ! command -v brew &>/dev/null; then
     MACOS_PACKAGE_MANAGER_PATH="/opt/homebrew/bin/brew"
-    echo "eval \"\$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)\"" >>~/.bashrc
-    echo "unalias brew 2>/dev/null" >>~/.bashrc
-    echo "brewser=\$(stat -f \"%Su\" \$(which brew))" >>~/.bashrc
-    echo "alias brew='sudo -Hu \$brewser brew'" >>~/.bashrc
+
+    if ! command -v brew &>/dev/null && [ -f "${MACOS_PACKAGE_MANAGER_PATH}" ]; then
+      eval "$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)"
+    fi
+
+    unalias brew 2>/dev/nul
+    brewser="$(stat -f \"%Su\" "$(which brew)")"
+    alias brew='sudo -Hu \$brewser brew'
+
   fi
   ;;
 Linux)
