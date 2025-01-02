@@ -12,4 +12,4 @@ cask "raycast", greedy: true
 cask "stretchly", greedy: true
 cask "visual-studio-code", greedy: true
 
-cask "XCode", id: 497799835
+mas "XCode", id: 497799835
