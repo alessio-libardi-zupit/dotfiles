@@ -6,8 +6,8 @@ Darwin)
     if [ -f "${MACOS_PACKAGE_MANAGER_PATH}" ]; then
       eval "$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)"
 
-      unalias brew 2>/dev/null
-      alias brew='sudo -Hu personal brew'
+      sudo chgrp -R admin "$(brew --prefix)"
+      sudo chmod -R g+rwX "$(brew --prefix)"
     fi
   fi
   ;;
