@@ -3,7 +3,7 @@ Darwin)
   if ! command -v brew &>/dev/null; then
     MACOS_PACKAGE_MANAGER_PATH="/opt/homebrew/bin/brew"
 
-    if ! command -v brew &>/dev/null && [ -f "${MACOS_PACKAGE_MANAGER_PATH}" ]; then
+    if [ -f "${MACOS_PACKAGE_MANAGER_PATH}" ]; then
       eval "$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)"
 
       unalias brew 2>/dev/null
@@ -18,14 +18,18 @@ Linux)
   if ! command -v brew &>/dev/null && [ -f "${LINUX_PACKAGE_MANAGER_PATH}" ]; then
     eval "$(${LINUX_PACKAGE_MANAGER_PATH} shellenv)"
   fi
+
+  if command -v keychain &>/dev/null && [ -f ~/.ssh/key ]; then
+    eval "$(keychain --quiet --eval --agents ssh key)"
+  fi
   ;;
 *) ;;
 esac
 
-if command -v keychain &>/dev/null && [ -f ~/.ssh/key ]; then
-  eval "$(keychain --quiet --eval --agents ssh key)"
-fi
-
 if command -v starship &>/dev/null; then
   eval "$(starship init bash)"
+fi
+
+if command -v kitty &>/dev/null; then
+  kitty +kitten themes --reload-in=all Catppuccin-Latte
 fi

@@ -1,6 +1,7 @@
 alias root='cd $ROOT'
 alias home='cd $HOME'
 alias workspace='cd $WORKSPACE'
+alias projects='cd $PROJECTS'
 
 alias update='bash $DOTFILES/bin/update.sh'
 

@@ -1,8 +1,15 @@
 brew "dockutil"
+brew "cocoapods"
 
+cask "android-studio", greedy: true
 cask "arc", greedy: true
+cask "docker", greedy: true
+cask "flutter", greedy: true
 cask "font-fira-code-nerd-font", greedy: true
 cask "keycastr", greedy: true
+cask "kitty", greedy: true
 cask "raycast", greedy: true
 cask "stretchly", greedy: true
 cask "visual-studio-code", greedy: true
+
+cask "XCode", id: 497799835
