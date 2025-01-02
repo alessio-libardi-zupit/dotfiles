@@ -7,8 +7,7 @@ Darwin)
       eval "$(${MACOS_PACKAGE_MANAGER_PATH} shellenv)"
 
       unalias brew 2>/dev/null
-      BREW_USER="$(stat -f \"%Su\" "$(which brew)")"
-      alias brew='sudo -Hu \$BREW_USER brew'
+      alias brew='sudo -Hu personal brew'
     fi
   fi
   ;;
